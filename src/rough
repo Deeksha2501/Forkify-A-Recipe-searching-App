@@ -1,0 +1,189 @@
+// async function testApi(query) {
+//     try {
+//         const api = '73804aa975a662567e0431f9f28a4f34';
+//         const res = await axios({
+//             "method" : "GET",
+//             "url" : `https://cors-anywhere.herokuapp.com/https://developers.zomato.com/${api}/v2.1/locations?query=${query}`,
+//             headers: new Headers({'content-type': 'application/json'}),
+//             mode: 'cors'
+//         })
+//         //res.body = JSON.stringify(body);
+//         console.log("uiui", res.results);
+//     }
+//     catch (e) {
+//         console.log("error", e)
+//     }
+// };
+
+// testApi('meerut');
+
+const api = '73804aa975a662567e0431f9f28a4f34';
+// axios.get(`https://cors-anywhere.herokuapp.com/https://developers.zomato.com/${api}/v2.1/locations?query=meerut`, {headers: {'content-type': 'application/json'}})
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     //do something
+//   });
+
+
+var check = async () =>{
+    const res = await fetch(`https://cors-anywhere.herokuapp.com/https://developers.zomato.com/${api}/v2.1/locations?query=meerut`);
+    console.log(res);
+}
+
+check();
+//https://forkify-api.herokuapp.com/api/search?q=pizza
+
+/*const axios = require("axios");
+
+axios({
+    "method":"GET",
+    "url":"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/quickAnswer",
+    "headers":{
+    "content-type":"application/octet-stream",
+    "x-rapidapi-host":"spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+    "x-rapidapi-key":"8ffb8fbfaamsh270e8bcd068252ep1dc17djsn065a8f049ef5"
+    },"params":{
+    "q":"How much vitamin c is in 2 apples%3F"
+    }
+    })
+    .then((response)=>{
+      console.log(response)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+
+
+    const axios = require("axios");
+
+axios({
+    "method":"GET",
+    "url":"https://cors-anywhere.herokuapp.com/https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search",
+    "headers":{
+    "content-type":"application/octet-stream",
+    "x-rapidapi-host":"spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+    "x-rapidapi-key":"8ffb8fbfaamsh270e8bcd068252ep1dc17djsn065a8f049ef5"
+    },"params":{
+    "diet":"vegetarian",
+    "excludeIngredients":"coconut",
+    "intolerances":"egg%2C gluten",
+    "number":"10",
+    "offset":"0",
+    "type":"main course",
+    "query":"burger"
+    }
+    })
+    .then((response)=>{
+      console.log(response)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+    async function testApi1(query){
+        try{
+
+            const proxy = 'https://cors-anywhere.herokuapp.com/';
+            const res = await axios({
+                "method":"GET",
+                "url":"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search",
+                "headers":{
+                "content-type":"application/json",
+                "x-rapidapi-host":"spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                "x-rapidapi-key":"8ffb8fbfaamsh270e8bcd068252ep1dc17djsn065a8f049ef5"
+                },"params":{
+                "diet":"vegetarian",
+                "excludeIngredients":"coconut",
+                "intolerances":"egg%2C gluten",
+                "number":"10",
+                "offset":"0",
+                "type":"main course",
+                "query":"burger"
+                }
+                });
+    
+                console.log("res" , res);
+        }
+        catch(e){
+            console.log("error " , e.response);
+        }
+    }
+
+    testApi1('burger');
+
+
+
+
+async function testApi(query) {
+    try {
+        const api = '73804aa975a662567e0431f9f28a4f34';
+        //    const res = await axios(`https://cors-anywhere.herokuapp.com/https://developers.zomato.com/${api}/v2.1/locations?query=${query}`  , {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Accept' : 'application/json'
+        //     }
+        //    });
+        const res = await axios({
+            method: 'get',
+            url: `https://cors-anywhere.herokuapp.com/https://developers.zomato.com/${api}/v2.1/locations?query=${query}`,
+            headers: {
+                'Content-Type': 'application/vnd.myapp.type+json'
+              }
+
+
+        })
+        console.log("uiui", res);
+    }
+    catch (e) {
+        console.log("error", e)
+    }
+};
+
+testApi('meerut');
+*/
+
+async function testApi(query) {
+    try {
+        const api = '73804aa975a662567e0431f9f28a4f34';
+        const res = await axios({
+            "method" : "GET",
+            "url" : `https://cors-anywhere.herokuapp.com/https://developers.zomato.com/${api}/v2.1/locations?query=${query}`,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+        })
+        console.log("uiui", res.JSON());
+    }
+    catch (e) {
+        console.log("error", e)
+    }
+};
+
+testApi('meerut');
+
+// async function postData(query) {
+//     const api = '73804aa975a662567e0431f9f28a4f34';
+//     const url = `https://cors-anywhere.herokuapp.com/https://developers.zomato.com/${api}/v2.1/locations?query=${query}`;
+//     // Default options are marked with *
+//     const response = await fetch(url, {
+//       method: 'GET', // *GET, POST, PUT, DELETE, etc.
+//       mode: 'cors', // no-cors, *cors, same-origin
+//       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+//       credentials: 'same-origin', // include, *same-origin, omit
+//       headers: {
+//         'Content-Type': 'application/json'
+//         // 'Content-Type': 'application/x-www-form-urlencoded',
+//       },
+//       //redirect: 'follow', // manual, *follow, error
+//       //referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+//       //body: JSON.stringify(data) // body data type must match "Content-Type" header
+//     });
+//     return response.json(); // parses JSON response into native JavaScript objects
+//   }
+  
+//   postData('meerut')
+//     .then((data) => {
+//       console.log(data); // JSON data parsed by `response.json()` call
+//     });
